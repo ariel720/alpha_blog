@@ -15,7 +15,6 @@ To get started, just do the following:
 2. Preview your new app by clicking on the URL that appears in the Run panel below (https://alpha-blog-shinhee.c9users.io/).
 
 Happy coding!
-The Cloud9 IDE team
 
 
 ## Support & Documentation

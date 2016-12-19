@@ -15,7 +15,10 @@
           <div class="article-body">
             <%= truncate(comment.content, length: 100) %>
             <div class="article-meta-details">
-            <small>Created by: <%= comment.user.username if comment.user %></small>
+            <small>Created by: <%= comment.user.username if comment.user %>,
+            <%= time_ago_in_words(comment.created_at) %>,
+            last updated: <%= time_ago_in_words(comment.updated_at) %> ago
+            </small>
             </div>
           </div>
      

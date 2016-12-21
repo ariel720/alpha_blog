@@ -4,7 +4,8 @@ class CommentsController < ApplicationController
   # GET /comments
   # GET /comments.json
   def index
-    @comments = Comment.all
+   # @comments = Comment.all : 모든 데이터 나열
+    @comments = Comment.paginate(page: params[:page],per_page:5)
   end
 
   # GET /comments/1

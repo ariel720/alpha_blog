@@ -2,7 +2,9 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Posts</h1>
-
+<div align="center">
+  <%= will_paginate %>
+</div>
 
      <% @comments.each do |comment| %>
     
@@ -32,9 +34,8 @@
     <% end %>
 
 
-<br>
-
-
-<br>
+<div align="center">
+  <%= will_paginate %>
+</div>
 
 <%= link_to 'New Comment', new_comment_path %>

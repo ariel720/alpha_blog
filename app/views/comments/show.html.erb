@@ -1,19 +1,19 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Content:</strong>
-  <%= @comment.content %>
-</p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @comment.title %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @comment.user.username %>
-</p>
-
-<%= link_to 'Edit', edit_comment_path(@comment) %> |
-<%= link_to 'Back', comments_path %>
+<h2 align="center">Title:<%= @comment.title %></h2>
+<div class="well col-xs-8 col-xs-offset-2">
+   <ul class="listing">
+     <div class="row center">
+       <div class=" col-md-4 col-md-offset-4">
+         <li>Created bt:</li>
+         <li class="article-title"> <%= link_to @comment.user.username,  @comment.user %> </li>
+         <li><small><%= pluralize( @comment.user.comments.count,"comment") if  @comment.user.comments %></small></li>
+       </div>
+     </div>
+   </ul>
+  <h4 class="center description"><strong>Content:</strong></h4>
+    <%=simple_format(@comment.content) %>
+  <div class="article-actions">
+    <%= link_to 'Edit', edit_comment_path(@comment) %> |
+    <%= link_to 'Back', comments_path %>
+  </div>
+</div>

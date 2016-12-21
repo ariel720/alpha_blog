@@ -24,6 +24,6 @@
     <%= f.password_field :password %>
   </div>
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit (@user.new_record? ? "sign up" : "update account") %>
   </div>
 <% end %>

@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-    has_many :comments
+    has_many :comments, dependent: :destroy
         before_save { self.email = email.downcase }
 validates :username, presence: true,
 

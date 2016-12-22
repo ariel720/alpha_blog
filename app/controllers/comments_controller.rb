@@ -77,7 +77,7 @@ class CommentsController < ApplicationController
     end
     
     def require_same_user
-      if current_user != @comment.user
+      if current_user != @comment.user and !current_user.admin?
         redirect_to root_path
       end
     end

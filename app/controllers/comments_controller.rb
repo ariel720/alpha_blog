@@ -1,5 +1,7 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
+  before_action :require_user, except: [:index, :show]
+  before_action :require_same_user, only: [:edit, :update, :destroy]
 
   # GET /comments
   # GET /comments.json
@@ -72,4 +74,11 @@ class CommentsController < ApplicationController
     def comment_params
       params.require(:comment).permit(:content, :title, :user_id)
     end
+    
+    def require_same_user
+      if current_user != @comment.user
+        redirect_to root_path
+      end
+    end
+    
 end
